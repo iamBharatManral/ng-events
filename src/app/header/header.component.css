@@ -2,9 +2,10 @@
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  background: #41a7c5;
+  background: var(--clr-blue);
   border-radius: 10px;
   font-size: 1.2rem;
+  color: white;
 }
 
 .header header{
