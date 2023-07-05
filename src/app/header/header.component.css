@@ -1,0 +1,42 @@
+.header{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #41a7c5;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+.header header{
+  padding: 0.5rem;
+}
+
+.navigation{
+  display: flex;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.events{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.search{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.search input, .search button{
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  outline: none;
+  border: navajowhite;
+}
+
+.user{
+  padding: 0.5rem;
+}
