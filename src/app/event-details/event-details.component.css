@@ -3,16 +3,19 @@
   flex-direction: column;
   justify-content: center;
   gap: 1.5rem;
+  width: max-content;
+  margin: 0 auto;
 }
 
 
 .event img{
-  width: 400px;
+  width: 30vw;
   height: 200px;
 }
 
 .name{
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .info{
