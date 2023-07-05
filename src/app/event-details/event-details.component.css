@@ -1,0 +1,41 @@
+.event{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+
+.event img{
+  width: 400px;
+  height: 200px;
+}
+
+.name{
+  font-size: 1.5rem;
+}
+
+.info{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info div{
+  padding: 0.5rem;
+  background: var(--clr-yellow);
+  border-radius: 10px;
+  width: 30vw;
+  border: 3px solid var(--clr-blue);
+}
+
+address{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: var(--clr-yellow);
+  padding: 0.5rem;
+  width: 30vw;
+  border: 3px solid var(--clr-blue);
+  border-radius: 10px;
+}

@@ -1,9 +1,9 @@
 <nav class="header">
   <section class="navigation">
-    <header>ngEvents</header>
+    <header><img src="/assets/images/angular.svg" alt="angular icon"></header>
     <div class="events">
-      <div>All Events</div>
-      <div>Create Event</div>
+      <div [routerLink]="['/events']">All Events</div>
+      <div [routerLink]="['/events/new']">Create Event</div>
       <option name="options">
         <select>Events</select>
       </option>

@@ -6,10 +6,12 @@
   border-radius: 10px;
   font-size: 1.2rem;
   color: white;
+  margin-bottom: 2rem;
 }
 
-.header header{
-  padding: 0.5rem;
+.header img{
+  width: 40px;
+  height: 40px;
 }
 
 .navigation{
@@ -20,7 +22,7 @@
 
 .events{
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
 }
 
