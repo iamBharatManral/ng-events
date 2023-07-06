@@ -3,16 +3,20 @@ import { CommonModule } from '@angular/common';
 import {RouterModule} from "@angular/router";
 import { UserRoutingModule } from '../user-routing.module';
 import {ProfileComponent} from "./profile/profile.component";
+import { LoginComponent } from './login/login.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
     UserRoutingModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ]
 })
 export class UserModule { }

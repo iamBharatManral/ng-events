@@ -20,3 +20,19 @@ body {
   font-family: 'Martian Mono', monospace;
 }
 
+.btn-group{
+  display: flex;
+  gap: 1rem;
+}
+
+button{
+  padding: 0.5rem 1rem;
+  background: var(--clr-orange);
+  color: whitesmoke;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  font-size: 1.2rem;
+}
+
