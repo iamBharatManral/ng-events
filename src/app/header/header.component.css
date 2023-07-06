@@ -43,3 +43,7 @@
 .user{
   padding: 0.5rem;
 }
+
+.active{
+  color: var(--clr-yellow);
+}

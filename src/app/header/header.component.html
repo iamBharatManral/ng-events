@@ -2,8 +2,8 @@
   <section class="navigation">
     <header><img src="/assets/images/angular.svg" alt="angular icon"></header>
     <div class="events">
-      <div [routerLink]="['/events']">All Events</div>
-      <div [routerLink]="['/events/new']">Create Event</div>
+      <div [routerLink]="['/events']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">All Events</div>
+      <div [routerLink]="['/events/new']" routerLinkActive="active">Create Event</div>
       <option name="options">
         <select>Events</select>
       </option>
