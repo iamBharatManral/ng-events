@@ -10,7 +10,6 @@ import {RouterModule} from "@angular/router";
 import { AppRoutingModule } from './app-routing.module';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
-import { ProfileComponent } from './user/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +20,6 @@ import { ProfileComponent } from './user/profile/profile.component';
     EventDetailsComponent,
     CreateEventComponent,
     NotFoundComponent,
-    ProfileComponent
   ],
   imports: [
     BrowserModule,
