@@ -13,8 +13,8 @@
 .form-group{
   padding: 0.5rem;
   display: flex;
+  flex-direction: column;
   gap: 1rem;
-  align-items: center;
 }
 
 input{
@@ -23,4 +23,18 @@ input{
   border: none;
   outline: none;
   border-radius: 10px;
+  width: 35vw;
+}
+
+.cancel{
+  background: var(--clr-red);
+}
+
+button:disabled{
+  background: gray;
+  cursor: no-drop;
+}
+
+sup{
+  color: var(--clr-red);
 }

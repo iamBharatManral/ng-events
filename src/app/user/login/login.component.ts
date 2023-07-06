@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Form, FormsModule} from "@angular/forms";
+import {Form, FormControl, FormsModule, Validators} from "@angular/forms";
 import {AuthService} from "../auth.service";
 import {Router} from "@angular/router";
 
