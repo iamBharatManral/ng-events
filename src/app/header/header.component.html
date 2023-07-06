@@ -2,8 +2,8 @@
   <section class="navigation">
     <header><img src="/assets/images/angular.svg" alt="angular icon"></header>
     <div class="events">
-      <div [routerLink]="['/events']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">All Events</div>
-      <div [routerLink]="['/events/new']" routerLinkActive="active">Create Event</div>
+      <div [routerLink]="['/events']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="link">All Events</div>
+      <div [routerLink]="['/events/new']" routerLinkActive="active" class="link">Create Event</div>
       <option name="options">
         <select>Events</select>
       </option>
@@ -13,5 +13,5 @@
     <input type="text">
     <button>Search</button>
   </section>
-  <section class="user">Welcome John</section>
+  <section class="user link" [routerLink]="['user/profile']">Welcome John</section>
 </nav>

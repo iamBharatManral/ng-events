@@ -35,6 +35,7 @@
   align-items: center;
   gap: 0.5rem;
   margin-left: auto;
+  margin-right: 1rem;
 }
 
 .search input, .search button{
@@ -46,8 +47,15 @@
 
 .user{
   padding: 0.5rem;
+  cursor: pointer;
 }
 
 .active{
   color: var(--clr-yellow);
+}
+
+.link:hover{
+  background: var(--clr-light-yellow);
+  color: var(--clr-red);
+  border-radius: 10px;
 }
