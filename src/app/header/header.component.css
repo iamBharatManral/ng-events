@@ -26,6 +26,10 @@
   align-items: center;
 }
 
+.events div{
+  padding: 0.5rem;
+}
+
 .search{
   display: flex;
   align-items: center;
