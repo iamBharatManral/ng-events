@@ -4,13 +4,14 @@ import {EventsListComponent} from "./events-list/events-list.component";
 import {EventDetailsComponent} from "./event-details/event-details.component";
 import {CreateEventComponent} from "./create-event/create-event.component";
 import {NotFoundComponent} from "./errors/not-found/not-found.component";
+import {eventRouteActivatorGuard} from "./event-route-activator.guard";
 
 const routes: Routes = [
   {path: "events/new", component: CreateEventComponent},
   { path: 'events', component: EventsListComponent },
-  {path: "events/:id", component: EventDetailsComponent},
+  {path: "events/:id", component: EventDetailsComponent, canActivate: [eventRouteActivatorGuard]},
   {path: "", redirectTo: "/events", pathMatch: "full"},
-  {path: "404", component: NotFoundComponent}
+  {path: "404", component: NotFoundComponent }
 ];
 
 @NgModule({
