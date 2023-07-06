@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Form, FormsModule} from "@angular/forms";
+import {AuthService} from "../auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -7,8 +9,14 @@ import {Form, FormsModule} from "@angular/forms";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  login(formValue:{}){
-    console.log(formValue)
+  constructor(private authService: AuthService, private router: Router) {
+  }
+  login(formValue:{username: string, password: string}){
+    this.authService.loginUser(formValue.username, formValue.password)
+    this.router.navigate(["events"])
+  }
+  cancel(){
+    this.router.navigate(["events"])
   }
 
 }

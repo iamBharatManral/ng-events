@@ -10,6 +10,7 @@ import {RouterModule} from "@angular/router";
 import { AppRoutingModule } from './app-routing.module';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
+import {AuthService} from "./user/auth.service";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
     RouterModule,
     AppRoutingModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,5 +13,8 @@
     <input type="text">
     <button>Search</button>
   </section>
-  <section class="user link" [routerLink]="['user/profile']">Welcome John</section>
+  <section class="user link">
+    <div class="profile" [routerLink]="['user/profile']" *ngIf="isAuthenticated()">Welcome {{username}}</div>
+    <div class="profile" [routerLink]="['user/login']" *ngIf="!isAuthenticated()">Login</div>
+  </section>
 </nav>
