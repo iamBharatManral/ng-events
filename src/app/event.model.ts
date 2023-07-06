@@ -14,7 +14,7 @@ export interface EventModel {
   sessions: SessionModel[]
 }
 
-interface SessionModel{
+export interface SessionModel{
   id: number,
   name: string,
   presenter: string,

@@ -6,7 +6,7 @@
   <img [src]="event?.imageUrl" [alt]="event?.name">
 
     <div class="info">
-      <div><strong>Date:</strong> {{event?.date}}</div>
+      <div><strong>Date:</strong> {{event?.date.getDate()}}/{{event?.date.getMonth()}}/{{event?.date.getFullYear()}}</div>
       <div><strong>Time:</strong> {{event?.time}}</div>
       <div><strong>Price:</strong> ${{event?.price}}</div>
     </div>

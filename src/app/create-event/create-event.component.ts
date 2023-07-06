@@ -16,7 +16,6 @@ export class CreateEventComponent {
         this.router.navigate(["/events"])
     }
     saveEvent(formValue: Form){
-      console.log(formValue)
       this.eventService.saveEvent(formValue)
       this.router.navigate(["/events"])
     }
