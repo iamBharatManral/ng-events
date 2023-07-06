@@ -323,4 +323,11 @@ export class EventsService {
   getEventById(id: number){
     return this.events.find(event => event.id === id)
   }
+  saveEvent(event: any){
+    event.imageUrl = "/assets/images/angular.svg"
+    event.date = new Date(event.date)
+    event.id = this.events.length
+    event.sessions = []
+    this.events.push(event)
+  }
 }
