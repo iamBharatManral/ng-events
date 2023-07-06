@@ -1,9 +1,9 @@
-<div class="event">
-
-  <div class="name">
+<div class="container">
+  <div class="event">
+    <div class="name">
       <h2>{{event?.name}} </h2>
     </div>
-  <img [src]="event?.imageUrl" [alt]="event?.name">
+    <img [src]="event?.imageUrl" [alt]="event?.name">
 
     <div class="info">
       <div><strong>Date:</strong> {{event?.date.getDate()}}/{{event?.date.getMonth()}}/{{event?.date.getFullYear()}}</div>
@@ -18,3 +18,15 @@
       </address>
     </div>
   </div>
+  <hr>
+  <h2>Sessions</h2>
+  <div class="addSession">
+    <button type="button" (click)="toggleAddMode()">Add Session</button>
+  </div>
+  <div class="sessionList" *ngIf="!addMode">
+    <app-session *ngFor="let session of event?.sessions" [session]="session"></app-session>
+  </div>
+  <app-create-session *ngIf="addMode" (createSession)="saveSession($event)" (cancelAddMode)="toggleAddMode()"></app-create-session>
+</div>
+
+

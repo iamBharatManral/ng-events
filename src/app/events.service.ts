@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {EventModel} from "./event.model";
+import {EventModel, SessionModel} from "./event.model";
 
 @Injectable({
   providedIn: 'root'
@@ -329,5 +329,9 @@ export class EventsService {
     event.id = this.events.length
     event.sessions = []
     this.events.push(event)
+  }
+  saveNewSession(id: number, session: SessionModel){
+    const index = this.events.findIndex(event => event.id === id)
+    this.events[index].sessions.push(session)
   }
 }

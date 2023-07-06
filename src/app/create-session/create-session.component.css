@@ -8,11 +8,11 @@ input{
   padding: 0.5rem 1rem;
   border: none;
   outline: none;
-  width: 35vw;
+  width: 25vw;
 }
 
 
 select, textarea{
-  width: 20vw;
+  width: 25vw;
   padding: 0.5rem;
 }

@@ -1,3 +1,9 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .event{
   display: flex;
   flex-direction: column;
@@ -41,4 +47,10 @@ address{
   width: 30vw;
   border: 3px solid var(--clr-blue);
   border-radius: 10px;
+}
+
+.sessionList{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }

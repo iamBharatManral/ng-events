@@ -13,6 +13,7 @@ import { NotFoundComponent } from './errors/not-found/not-found.component';
 import {AuthService} from "./user/auth.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CreateSessionComponent } from './create-session/create-session.component';
+import { SessionComponent } from './session/session.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { CreateSessionComponent } from './create-session/create-session.componen
     CreateEventComponent,
     NotFoundComponent,
     CreateSessionComponent,
+    SessionComponent,
   ],
     imports: [
         BrowserModule,

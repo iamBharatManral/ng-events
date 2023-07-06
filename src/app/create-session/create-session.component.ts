@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Router} from "@angular/router";
 import {Form, FormControl, FormGroup, Validators} from "@angular/forms";
 import {SessionModel} from "../event.model";
@@ -9,6 +9,8 @@ import {SessionModel} from "../event.model";
   styleUrls: ['./create-session.component.css']
 })
 export class CreateSessionComponent implements OnInit{
+  @Output() createSession = new EventEmitter<SessionModel>()
+  @Output() cancelAddMode = new EventEmitter<boolean>()
   newSessionForm: FormGroup | any;
   name: FormControl | any;
   presenter: FormControl | any;
@@ -43,9 +45,9 @@ export class CreateSessionComponent implements OnInit{
       duration: formValues.duration,
       voters: []
     }
-    this.router.navigate(["/events"])
+    this.createSession.emit(session)
   }
   cancel(){
-    this.router.navigate(["/events"])
+    this.cancelAddMode.emit(false)
   }
 }

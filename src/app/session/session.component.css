@@ -1,0 +1,25 @@
+.session{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--clr-blue);
+  color: whitesmoke;
+  border-radius: 10px;
+}
+
+.name{
+  color: var(--clr-yellow)
+}
+
+.presenter{
+  color: #f77f00;
+}
+
+span{
+  color: indianred;
+}
+.abstract{
+  color: beige;
+  font-style: italic;
+}
