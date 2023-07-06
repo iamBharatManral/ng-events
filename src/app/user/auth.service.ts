@@ -18,5 +18,13 @@ export class AuthService {
     return !!this.currentUser
   }
 
+  saveUpdatedProfile(firstName: string, lastName: string){
+    this.currentUser= {
+      ...this.currentUser,
+      firstName: firstName,
+      lastName: lastName
+    }
+  }
+
   constructor() { }
 }

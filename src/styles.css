@@ -30,9 +30,21 @@ button{
   background: var(--clr-orange);
   color: whitesmoke;
   outline: none;
-  border-radius: 10px;
   cursor: pointer;
   border: none;
   font-size: 1.2rem;
+}
+
+button:disabled{
+  background: gray;
+  cursor: no-drop;
+}
+
+sup{
+  color: var(--clr-red);
+}
+
+.cancel{
+  background: var(--clr-red);
 }
 

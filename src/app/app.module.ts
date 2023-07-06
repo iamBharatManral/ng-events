@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CreateEventComponent } from './create-event/create-event.component';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import {AuthService} from "./user/auth.service";
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {AuthService} from "./user/auth.service";
     BrowserModule,
     RouterModule,
     AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

@@ -3,18 +3,45 @@
   flex-direction: column;
   gap: 1rem;
 }
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: papayawhip;
+  width: max-content;
+  margin: 0 auto;
+  border-radius: 10px;
+  gap: 1rem;
+}
+
+.form-group{
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .btn-group{
   display: flex;
   gap: 1rem;
 }
 
-.btn-group button{
+
+input{
+  font-size: 1.2rem;
   padding: 0.5rem 1rem;
-  background: var(--clr-orange);
-  color: var(--clr-blue);
+  border: none;
   outline: none;
   border-radius: 10px;
-  border: 3px solid var(--clr-blue);
-  cursor: pointer;
-  font-size: 1.2rem;
+  width: 30vw;
+}
+
+.cancel{
+  background: var(--clr-red);
+}
+
+sup{
+  color: var(--clr-red);
 }

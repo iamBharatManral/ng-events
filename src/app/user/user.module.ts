@@ -4,7 +4,7 @@ import {RouterModule} from "@angular/router";
 import { UserRoutingModule } from '../user-routing.module';
 import {ProfileComponent} from "./profile/profile.component";
 import { LoginComponent } from './login/login.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -16,7 +16,8 @@ import {FormsModule} from "@angular/forms";
     CommonModule,
     UserRoutingModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class UserModule { }

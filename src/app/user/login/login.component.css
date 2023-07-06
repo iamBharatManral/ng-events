@@ -26,15 +26,3 @@ input{
   width: 35vw;
 }
 
-.cancel{
-  background: var(--clr-red);
-}
-
-button:disabled{
-  background: gray;
-  cursor: no-drop;
-}
-
-sup{
-  color: var(--clr-red);
-}
