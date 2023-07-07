@@ -19,7 +19,15 @@
     </div>
   </div>
   <hr>
-  <h2>Sessions</h2>
+  <div class="nameAndLevels">
+    <h2>Sessions</h2>
+    <div class="levels">
+      <button type="button" value="all" [ngClass]="{active: activeButton === 'all'}" (click)="setActive('all')">All</button>
+      <button type="button" value="beginner" [ngClass]="{active: activeButton === 'beginner'}" (click)="setActive('beginner')">Beginner</button>
+      <button type="button" value="intermediate" [ngClass]="{active: activeButton === 'intermediate'}" (click)="setActive('intermediate')">Intermediate</button>
+      <button type="button" value="advanced" [ngClass]="{active: activeButton === 'advanced'}" (click)="setActive('advanced')">Advanced</button>
+    </div>
+  </div>
   <div class="addSession">
     <button type="button" (click)="toggleAddMode()">Add Session</button>
   </div>
