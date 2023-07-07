@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Router} from "@angular/router";
 import {Form, FormControl, FormGroup, Validators} from "@angular/forms";
 import {SessionModel} from "../event.model";
+import {NotificationService} from "../notification.service";
 
 @Component({
   selector: 'app-create-session',
@@ -17,7 +18,7 @@ export class CreateSessionComponent implements OnInit{
   duration: FormControl | any;
   abstract: FormControl | any;
   level: FormControl | any;
-  constructor(private router: Router) {
+  constructor(private router: Router, private notification: NotificationService) {
   }
 
   ngOnInit() {
@@ -46,6 +47,7 @@ export class CreateSessionComponent implements OnInit{
       voters: []
     }
     this.createSession.emit(session)
+    this.notification.success()
   }
   cancel(){
     this.cancelAddMode.emit(false)
