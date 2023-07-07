@@ -10,11 +10,17 @@
     </div>
   </section>
   <section class="search">
-    <input type="text">
-    <button>Search</button>
+    <form #searchForm="ngForm" (ngSubmit)="search(searchForm.value)">
+      <input type="text" name="searchTerm" [(ngModel)]="searchTerm">
+      <button type="submit">Search</button>
+    </form>
   </section>
   <section class="user link">
     <div class="profile" [routerLink]="['user/profile']" *ngIf="isAuthenticated()">Welcome {{username}}</div>
     <div class="profile" [routerLink]="['user/login']" *ngIf="!isAuthenticated()">Login</div>
+  </section>
+  <section class="modal" *ngIf="modalActive">
+    <div class="close" (click)="closeAndClear(false)">x</div>
+    <app-modal [searchTerm]="searchTerm" (closeAndClear)="closeAndClear(false)"></app-modal>
   </section>
 </nav>

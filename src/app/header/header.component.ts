@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {AuthService} from "../user/auth.service";
 import {Router} from "@angular/router";
+import {Form} from "@angular/forms";
 
 @Component({
   selector: 'app-header',
@@ -9,6 +10,8 @@ import {Router} from "@angular/router";
 })
 export class HeaderComponent {
   username: any;
+  searchTerm = ""
+  modalActive = false
   constructor(private authService: AuthService) {
   }
 
@@ -18,5 +21,16 @@ export class HeaderComponent {
       return true
     }
     return false
+  }
+  search(formValues: {searchTerm: string}){
+    this.modalActive = true
+    this.searchTerm = formValues.searchTerm
+  }
+  closeAndClear(modalStatus: boolean){
+    this.modalActive = modalStatus
+    this.searchTerm = ""
+  }
+  clearSearch(searchTerm: string){
+    this.searchTerm = searchTerm
   }
 }

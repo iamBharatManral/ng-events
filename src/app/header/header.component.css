@@ -55,7 +55,28 @@
 }
 
 .link:hover{
-  background: var(--clr-light-yellow);
-  color: var(--clr-red);
+  background: indianred;
   border-radius: 10px;
+}
+
+.modal{
+  position: absolute;
+  background: var(--clr-orange);
+  padding: 0.5rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  top: 10vh;
+  left: 25vw;
+  max-height: 85vh;
+  overflow: scroll;
+  width: 50vw;
+}
+
+.close{
+  cursor: pointer;
+  align-self: flex-end;
+  font-size: 2rem;
+
 }
