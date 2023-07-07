@@ -1,0 +1,21 @@
+.collapsable{
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: var(--clr-blue);
+  color: whitesmoke;
+  border-radius: 10px;
+}
+
+.name{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name img{
+  width: 40px;
+  height: 40px;
+}

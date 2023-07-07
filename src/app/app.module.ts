@@ -14,6 +14,7 @@ import {AuthService} from "./user/auth.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { CreateSessionComponent } from './create-session/create-session.component';
 import { SessionComponent } from './session/session.component';
+import { CollapsableComponent } from './collapsable/collapsable.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { SessionComponent } from './session/session.component';
     NotFoundComponent,
     CreateSessionComponent,
     SessionComponent,
+    CollapsableComponent,
   ],
     imports: [
         BrowserModule,

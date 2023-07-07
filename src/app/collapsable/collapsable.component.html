@@ -1,0 +1,7 @@
+<div class="collapsable">
+  <div class="name" (click)="toggleSession()">
+    <div>{{name}}</div>
+    <img src="{{arrow}}" alt="{{alternate}}">
+  </div>
+  <ng-content *ngIf="!isCollapsed"></ng-content>
+</div>
