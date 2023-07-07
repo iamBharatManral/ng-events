@@ -21,6 +21,10 @@
   <hr>
   <div class="nameAndLevels">
     <h2>Sessions</h2>
+    <div class="sorting">
+      <button type="button" value="intermediate" [ngClass]="{active: activeSort === 'name'}" (click)="sortBy('name')">By Name</button>
+      <button type="button" value="advanced" [ngClass]="{active: activeSort === 'vote'}" (click)="sortBy('vote')">By Votes</button>
+    </div>
     <div class="levels">
       <button type="button" value="all" [ngClass]="{active: activeButton === 'all'}" (click)="setActive('all')">All</button>
       <button type="button" value="beginner" [ngClass]="{active: activeButton === 'beginner'}" (click)="setActive('beginner')">Beginner</button>

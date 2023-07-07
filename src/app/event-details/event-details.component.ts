@@ -12,12 +12,14 @@ export class EventDetailsComponent implements OnInit{
   event: any;
   addMode = false;
   activeButton = 'all'
+  activeSort = 'name'
   constructor(private eventsService: EventsService, private route: ActivatedRoute) {
   }
   ngOnInit() {
     this.route.params.forEach((params: Params) => {
       this.event = this.eventsService.getEventById(+params['id'])
       this.addMode = false
+      this.sortBy('name')
     })
   }
   saveSession(session: SessionModel){
@@ -37,6 +39,31 @@ export class EventDetailsComponent implements OnInit{
       }
       return session.level.toLowerCase() === this.activeButton
     })
+    this.event = {...this.event, sessions}
+  }
+  sortBy(value: string){
+    this.activeSort = value
+    function sortByValue(first:SessionModel, second: SessionModel): number {
+      if(value === 'name'){
+        if(first.name < second.name){
+          return -1
+        }else if(first.name > second.name){
+          return 1
+        }
+        return 0
+      }else{
+        if(first.voters.length < second.voters.length){
+          return 1
+        }else if(first.voters.length > second.voters.length){
+          return -1
+        }else{
+          return 0
+        }
+      }
+
+    }
+    let eventWithSpecificId = this.eventsService.getEventById(parseInt(this.route.snapshot.params["id"]))
+    let sessions = eventWithSpecificId?.sessions.sort(sortByValue)
     this.event = {...this.event, sessions}
   }
 }

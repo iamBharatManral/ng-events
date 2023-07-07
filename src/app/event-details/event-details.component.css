@@ -70,3 +70,10 @@ address{
 .active{
   background: var(--clr-blue);
 }
+
+.sorting{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-right: auto;
+}
