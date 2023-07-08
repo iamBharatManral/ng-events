@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 // @ts-ignore
-import { alert, confirm } from 'notie'
+import { alert } from 'notie'
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,8 @@ export class NotificationService {
   success(){
     alert({
       type: "success",
-      text: "Success"
+      text: "Success",
+      time: 1
     })
   }
 }

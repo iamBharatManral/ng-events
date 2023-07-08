@@ -13,6 +13,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "notie"
+              ],
             "outputPath": "dist/ng-fundamentals",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -25,9 +28,11 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/notie/dist/notie.css"
             ],
             "scripts": [
+              "node_modules/notie/dist/notie.js"
             ]
           },
           "configurations": {
