@@ -20,7 +20,7 @@ export class ModalComponent implements OnInit{
     this.eventService.getEvents()
       .filter(event => event.sessions
         .map(session => {
-          if(session.name.toLowerCase().includes(this.searchTerm.toLowerCase())){
+          if(session.abstract.toLowerCase().includes(this.searchTerm.toLowerCase())){
             sessions.push({session, id: event.id})
           }
         }
