@@ -7,6 +7,7 @@
   font-size: 1.2rem;
   color: white;
   margin-bottom: 2rem;
+  align-items: center;
 }
 
 .header img{
@@ -30,25 +31,29 @@
 .events div{
   padding: 0.5rem;
 }
-
 .search{
+  margin-left: auto;
+}
+.search form{
   display: flex;
   align-items: center;
-  gap: 0.5rem;
   margin-left: auto;
   margin-right: 1rem;
 }
 
 .search input{
-  padding: 0.5rem 1rem;
+  padding: 0.1rem 1rem;
   outline: none;
-  font-size: 1.2rem;
-  border: navajowhite;
+  width: 250px;
+  font-size: 1.1rem;
 }
+
 
 .user{
   padding: 0.5rem;
   cursor: pointer;
+  display: flex;
+  gap: 1rem;
 }
 
 .active{

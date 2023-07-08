@@ -4,9 +4,6 @@
     <div class="events">
       <div [routerLink]="['/events']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="link">All Events</div>
       <div [routerLink]="['/events/new']" routerLinkActive="active" class="link">Create Event</div>
-      <option name="options">
-        <select>Events</select>
-      </option>
     </div>
   </section>
   <section class="search">
@@ -15,9 +12,10 @@
       <button type="submit">Search</button>
     </form>
   </section>
-  <section class="user link">
+  <section class="user">
     <div class="profile" [routerLink]="['user/profile']" *ngIf="isAuthenticated()">Welcome {{username}}</div>
     <div class="profile" [routerLink]="['user/login']" *ngIf="!isAuthenticated()">Login</div>
+    <div class="profile" (click)="logout()" *ngIf="isAuthenticated()">Logout</div>
   </section>
   <section class="modal" *ngIf="modalActive">
     <div class="close" (click)="closeAndClear(false)">x</div>

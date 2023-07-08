@@ -12,7 +12,7 @@ export class HeaderComponent {
   username: any;
   searchTerm = ""
   modalActive = false
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
   }
 
   isAuthenticated(): boolean{
@@ -32,5 +32,10 @@ export class HeaderComponent {
   }
   clearSearch(searchTerm: string){
     this.searchTerm = searchTerm
+  }
+
+  logout() {
+    this.authService.logout()
+    this.router.navigate(["/events"])
   }
 }
