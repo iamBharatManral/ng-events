@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {EventModel, SessionModel} from "./event.model";
+import {AuthService} from "./user/auth.service";
 
 @Injectable({
   providedIn: 'root'
@@ -316,7 +317,7 @@ export class EventsService {
     }
   ]
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
   getEvents(): EventModel[] {
     return this.events
   }
@@ -333,5 +334,58 @@ export class EventsService {
   saveNewSession(id: number, session: SessionModel){
     const index = this.events.findIndex(event => event.id === id)
     this.events[index].sessions.push(session)
+  }
+  removeVoteFromSession(eventId: number, sessionId: number){
+    let username: string = this.authService.currentUser.username
+    let eventsWithout = this.events.filter(event => event.id !== eventId)
+
+    let specificEvent = this.events.find(event => event.id === eventId)
+
+    let sessionWithout = specificEvent?.sessions.filter(session => session.id !== sessionId)
+
+    let specificSession = specificEvent?.sessions.find(session => session.id === sessionId)
+
+    let newVoters = specificSession?.voters.filter(voter => voter !== username) || []
+
+    let sessionWithNewVoters = {...specificSession, voters: newVoters}
+
+    // @ts-ignore
+    let combinedSessions = sessionWithout.slice()
+    // @ts-ignore
+    combinedSessions.push(sessionWithNewVoters)
+    let eventWithNewSessions = {...specificEvent, sessions: combinedSessions}
+    let allEvents = eventsWithout.slice()
+    allEvents.push(eventWithNewSessions as EventModel)
+    this.events = allEvents
+  }
+  addVoteForSession(eventId: number, sessionId: number){
+    let username: string = this.authService.currentUser.username
+    let eventsWithout = this.events.filter(event => event.id !== eventId)
+
+    let specificEvent = this.events.find(event => event.id === eventId)
+
+    let sessionWithout = specificEvent?.sessions.filter(session => session.id !== sessionId)
+
+    let specificSession = specificEvent?.sessions.find(session => session.id === sessionId)
+
+    specificSession?.voters.push(username)
+
+    let sessionWithNewVoters = {...specificSession}
+
+    // @ts-ignore
+    let combinedSessions = sessionWithout.slice()
+    // @ts-ignore
+    combinedSessions.push(sessionWithNewVoters)
+    let eventWithNewSessions = {...specificEvent, sessions: combinedSessions}
+    let allEvents = eventsWithout.slice()
+    allEvents.push(eventWithNewSessions as EventModel)
+    this.events = allEvents
+  }
+
+  isCurrentUserVotedForSession(eventId: number, sessionId: number) {
+    let username: string = this.authService.currentUser.username
+    let event = this.events.find(event => event.id === eventId)
+    let session = event?.sessions.find(session => session.id === sessionId)
+    return session?.voters.includes(username)
   }
 }

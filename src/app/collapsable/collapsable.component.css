@@ -4,6 +4,7 @@
   flex-direction: column;
   gap: 0.5rem;
   padding: 1rem;
+  justify-content: space-between;
   background: var(--clr-blue);
   color: whitesmoke;
   border-radius: 10px;

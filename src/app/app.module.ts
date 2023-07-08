@@ -17,6 +17,8 @@ import { SessionComponent } from './session/session.component';
 import { CollapsableComponent } from './collapsable/collapsable.component';
 import { DurationPipe } from './duration.pipe';
 import { ModalComponent } from './modal/modal.component';
+import { VotesComponent } from './votes/votes.component';
+
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { ModalComponent } from './modal/modal.component';
     CollapsableComponent,
     DurationPipe,
     ModalComponent,
+    VotesComponent,
   ],
     imports: [
         BrowserModule,

@@ -1,8 +1,11 @@
-<div class="session">
-  <app-collapsable [name]="session.name">
-    <div class="presenter">{{session.presenter}}</div>
-    <div class="duration"><span>Duration: </span>{{session.duration | duration}}</div>
-    <div class="level"><span>Level: </span>{{session.level}}</div>
-    <p class="abstract">&ldquo;{{session.abstract}}&rdquo;</p>
-  </app-collapsable>
+<div class="sessionWithVotes">
+  <app-votes [sessionId]="session.id" *ngIf="isAuthenticated()"></app-votes>
+  <div class="session">
+    <app-collapsable [name]="session.name">
+      <div class="presenter">{{session.presenter}}</div>
+      <div class="duration"><span>Duration: </span>{{session.duration | duration}}</div>
+      <div class="level"><span>Level: </span>{{session.level}}</div>
+      <p class="abstract">&ldquo;{{session.abstract}}&rdquo;</p>
+    </app-collapsable>
+  </div>
 </div>

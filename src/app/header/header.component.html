@@ -1,6 +1,6 @@
 <nav class="header">
   <section class="navigation">
-    <header><img src="/assets/images/angular.svg" alt="angular icon"></header>
+    <img src="/assets/images/angular.svg" alt="angular icon">
     <div class="events">
       <div [routerLink]="['/events']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="link">All Events</div>
       <div [routerLink]="['/events/new']" routerLinkActive="active" class="link">Create Event</div>
@@ -11,7 +11,7 @@
   </section>
   <section class="search">
     <form #searchForm="ngForm" (ngSubmit)="search(searchForm.value)">
-      <input type="text" name="searchTerm" [(ngModel)]="searchTerm">
+      <input type="text" name="searchTerm" [(ngModel)]="searchTerm" placeholder="search sessions...">
       <button type="submit">Search</button>
     </form>
   </section>

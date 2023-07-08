@@ -1,11 +1,12 @@
-.session{
+.sessionWithVotes{
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem;
+  gap: 1rem;
+}
+.session{
   background: var(--clr-blue);
   color: whitesmoke;
   border-radius: 10px;
+  flex-grow: 1;
 }
 
 .name{
