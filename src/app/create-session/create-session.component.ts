@@ -1,8 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {Form, FormControl, FormGroup, Validators} from "@angular/forms";
 import {SessionModel} from "../event.model";
 import {NotificationService} from "../notification.service";
+import {EventsService} from "../events.service";
 
 @Component({
   selector: 'app-create-session',
@@ -18,7 +19,7 @@ export class CreateSessionComponent implements OnInit{
   duration: FormControl | any;
   abstract: FormControl | any;
   level: FormControl | any;
-  constructor(private router: Router, private notification: NotificationService) {
+  constructor(private router: Router, private notification: NotificationService, private eventService: EventsService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -38,7 +39,7 @@ export class CreateSessionComponent implements OnInit{
 
   saveSession(formValues: any){
     let session: SessionModel= {
-      id: 1,
+      id: this.eventService.getNextSessionId(this.route.snapshot.params['id']),
       name: formValues.name,
       presenter: formValues.presenter,
       level: formValues.presenter,

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "./user/auth.service";
+import {EventsService} from "./events.service";
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,11 @@ import {AuthService} from "./user/auth.service";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private eventService: EventsService) {
   }
   ngOnInit() {
     this.authService.isAuthenticated()
+    this.eventService.initializeEvents()
   }
 
 }

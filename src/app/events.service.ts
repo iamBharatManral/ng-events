@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {EventModel, SessionModel} from "./event.model";
 import {AuthService} from "./user/auth.service";
+import {ActivatedRoute, Route, Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -316,8 +317,25 @@ export class EventsService {
       ]
     }
   ]
+  eventsObj = {
+    events: this.events
+  }
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService){ }
+
+  initializeEvents(){
+    let events = localStorage.getItem('events')
+    if(!events){
+      this.persistDataToLocalStorage()
+    }else{
+      this.events = JSON.parse(events).events
+      this.eventsObj = {events: this.events}
+    }
+  }
+
+  persistDataToLocalStorage(){
+    localStorage.setItem("events", JSON.stringify(this.eventsObj))
+  }
   getEvents(): EventModel[] {
     return this.events
   }
@@ -327,13 +345,17 @@ export class EventsService {
   saveEvent(event: any){
     event.imageUrl = "/assets/images/angular.svg"
     event.date = new Date(event.date)
-    event.id = this.events.length
+    event.id = this.events.length + 1
     event.sessions = []
     this.events.push(event)
+    this.eventsObj = {events: this.events}
+    this.persistDataToLocalStorage()
   }
   saveNewSession(id: number, session: SessionModel){
     const index = this.events.findIndex(event => event.id === id)
     this.events[index].sessions.push(session)
+    this.eventsObj = {events: this.events}
+    this.persistDataToLocalStorage()
   }
   removeVoteFromSession(eventId: number, sessionId: number){
     let username: string = this.authService.currentUser.username
@@ -357,6 +379,8 @@ export class EventsService {
     let allEvents = eventsWithout.slice()
     allEvents.push(eventWithNewSessions as EventModel)
     this.events = allEvents
+    this.eventsObj = {events: this.events}
+    this.persistDataToLocalStorage()
   }
   addVoteForSession(eventId: number, sessionId: number){
     let username: string = this.authService.currentUser.username
@@ -380,6 +404,8 @@ export class EventsService {
     let allEvents = eventsWithout.slice()
     allEvents.push(eventWithNewSessions as EventModel)
     this.events = allEvents
+    this.eventsObj = {events: this.events}
+    this.persistDataToLocalStorage()
   }
 
   isCurrentUserVotedForSession(eventId: number, sessionId: number) {
@@ -387,5 +413,10 @@ export class EventsService {
     let event = this.events.find(event => event.id === eventId)
     let session = event?.sessions.find(session => session.id === sessionId)
     return session?.voters.includes(username)
+  }
+
+  getNextSessionId(eventId: number) {
+    // @ts-ignore
+    return this.events.find(event => event.id === +eventId)?.sessions?.length + 1
   }
 }

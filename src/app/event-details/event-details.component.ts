@@ -14,7 +14,7 @@ export class EventDetailsComponent implements OnInit{
   addMode = false;
   activeButton = 'all'
   activeSort = 'name'
-  constructor(private eventsService: EventsService, private route: ActivatedRoute) {
+  constructor(private eventsService: EventsService, private route: ActivatedRoute, private router: Router) {
   }
   ngOnInit() {
     this.route.params.forEach((params: Params) => {
@@ -26,6 +26,7 @@ export class EventDetailsComponent implements OnInit{
   saveSession(session: SessionModel){
     this.eventsService.saveNewSession(parseInt(this.route.snapshot.params["id"]), session)
     this.addMode = false
+    this.router.navigate(["/events/", this.route.snapshot.params["id"]])
   }
   toggleAddMode(){
     this.addMode = !this.addMode
